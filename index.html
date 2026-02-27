@@ -1,11 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pizzaria Fatec - Escolha seu Sabor</title>
 </head>
 <body>
-    
+
+    <!-- ========================================== -->
+    <!-- CABEÇALHO DO SITE                          -->
+    <!-- ========================================== -->
+    <header class="cabecalho-principal">
+        <!-- Logo da Pizzaria -->
+        <div class="logo">
+            <img src="foto logo pizzaria.png" alt="Logotipo da Pizzaria Fatec">
+        </div>
+        
+        <!-- Menu de Navegação -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- CONTEÚDO PRINCIPAL (MAIN)                  -->
+    <!-- ========================================== -->
+    <main class="conteudo-principal">
+        
+        <!-- Título principal da página -->
+        <h1 class="titulo-pagina">Nosso Cardápio</h1>
+
+        <!-- ========================================== -->
+        <!-- CONTAINER DAS PIZZAS                       -->
+        <!-- O <div> é uma caixa genérica que agrupa itens-->
+        <!-- ========================================== -->
+        <div class="grade-de-pizzas">
+
+            <!-- PIZZA 1 -->
+            <article class="cartao-pizza">
+                <img src="Foto pizza calabresa.png" alt="Foto da Pizza de Calabresa">
+                <h2 class="sabor-nome">Calabresa Clássica</h2>
+                <p class="sabor-ingredientes">Massa fina, molho de tomate, muita calabresa e cebola fatiada.</p>
+                <p class="sabor-preco">R$ 45,00</p>
+                <a href="#carrinho" class="botao-pedir">Pedir Agora</a>
+            </article>
+
+            <!-- PIZZA 2 -->
+            <article class="cartao-pizza">
+                <img src="Foto pizza Margherita.png" alt="Foto da Pizza Margherita">
+                <h2 class="sabor-nome">Margherita Especial</h2>
+                <p class="sabor-ingredientes">Mussarela fresca, tomate, manjericão e um fio de azeite.</p>
+                <p class="sabor-preco">R$ 50,00</p>
+                <a href="#carrinho" class="botao-pedir">Pedir Agora</a>
+            </article>
+
+            <!-- PIZZA 3 -->
+            <article class="cartao-pizza">
+                <img src="Foto pizzza frango.png" alt="Foto da Pizza de Frango com Catupiry">
+                <h2 class="sabor-nome">Frango com Catupiry</h2>
+                <p class="sabor-ingredientes">Frango desfiado temperado coberto com autêntico Catupiry.</p>
+                <p class="sabor-preco">R$ 55,00</p>
+                <a href="#carrinho" class="botao-pedir">Pedir Agora</a>
+            </article>
+
+        </div>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- RODAPÉ DO SITE                             -->
+    <!-- ========================================== -->
+    <footer class="rodape-principal">
+        <p>&copy; 2026 Pizzaria Fatec Pompéia. Todos os direitos reservados.</p>
+        <p>Desenvolvido pelos alunos de Sistemas Inteligentes.</p>
+    </footer>
+
 </body>
 </html>
