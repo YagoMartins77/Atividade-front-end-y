@@ -6,7 +6,7 @@
 
     <!-- ÁREA DO CSS -->
     <style>
-        /* 1. RESET BÁSICO: Tira as margens padrão do navegador e define a fonte */
+       
         * {
             margin: 0;
             padding: 0;
@@ -15,41 +15,41 @@
         }
 
         body {
-            background-color: #f8f9fa; /* Fundo cinza bem claro */
-            color: #333; /* Texto cinza escuro para boa leitura */
+            background-color: #f8f9fa; 
+            color: #333;
         }
 
         /* 2. ESTILO DO CABEÇALHO */
         .cabecalho-principal {
-            background-color: #000000; /* Preto para remeter a luta */
+            background-color: #000000; 
             color: white;
             padding: 20px;
-            display: flex; /* Coloca logo e menu na mesma linha */
-            justify-content: space-between; /* Um de cada lado da tela */
-            align-items: center; /* Centraliza verticalmente */
+            display: flex; 
+            justify-content: space-between;
+            align-items: center; 
         }
 
         /* Estilo dos links do menu */
         .menu ul {
-            list-style: none; /* Tira as "bolinhas" da lista */
-            display: flex; /* Coloca os links do menu lado a lado */
-            gap: 20px; /* Espaço entre os links */
+            list-style: none; 
+            display: flex; 
+            gap: 20px;
         }
 
         .menu a {
             color: white;
-            text-decoration: none; /* Tira o sublinhado do link */
+            text-decoration: none; 
             font-weight: bold;
         }
 
         .menu a:hover {
-            color: #ffffff; /* Fica amarelo ao passar o mouse! (Interatividade) */
+            color: #ffffff;
         }
 
-        /* 3. CONTEÚDO PRINCIPAL */
+     
         .conteudo-principal {
             padding: 40px 20px;
-            text-align: center; /* Centraliza o título principal */
+            text-align: center; 
         }
 
         .titulo-pagina {
@@ -59,19 +59,19 @@
 
         /* 4. A MÁGICA DO FLEXBOX (Organizando as lutas) */
         .grade-de-lutas {
-            display: flex; /* Transforma a caixa numa linha flexível */
-            justify-content: center; /* Centraliza os cartões no meio da tela */
-            gap: 30px; /* Espaço entre cada cartão de luta */
-            flex-wrap: wrap; /* Se a tela for pequena, joga o cartão pra baixo */
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            flex-wrap: wrap; 
         }
 
         .cartao-luta {
             background-color: white;
-            padding: 20px; /* Espaço interno */
-            border-radius: 10px; /* Bordas arredondadas */
-            width: 300px; /* Largura fixa do cartão */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para dar efeito 3D */
-            transition: transform 0.3s; /* Prepara uma animação suave */
+            padding: 20px; 
+            border-radius: 10px; 
+            width: 300px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            transition: transform 0.3s; 
         }
 
         .cartao-luta:hover {
@@ -140,7 +140,7 @@
         <nav class="menu">
             <ul>
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#acervo">Cardápio</a></li>
+                <li><a href="#acervo">Acervo</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -153,23 +153,23 @@
         <div class="grade-de-lutas">
 
             <article class="cartao-luta">
-                <img src="" alt="Foto da luta">
+                <img src="Foto boxe.png" alt="Foto boxe">
                 <h2 class="luta-nome">Boxe</h2>
-                <p class="luta-preco">R$ 45,00</p>
+                <p class="luta-preco">R$ 100,00</p>
                 <a href="#carrinho" class="botao-matricular-se">Matricular-se Agora</a>
             </article>
 
             <article class="cartao-luta">
-                <img src="https://placehold.co/200x200?text=Pizza+Margherita" alt="Foto da luta">
+                <img src="jiujitsu.png" alt="Foto jiujitsu">
                 <h2 class="luta-nome">Boxe</h2>
-                <p class="luta-preco">R$ 50,00</p>
+                <p class="luta-preco">R$ 100,00</p>
                 <a href="#carrinho" class="botao-matricular-se">Matricular-se Agora</a>
             </article>
 
             <article class="cartao-luta">
-                <img src="https://placehold.co/200x200?text=Pizza+Frango" alt="Foto da luta">
+                <img src="muay thay.png" alt="Foto muaythay">
                 <h2 class="luta-nome">Boxe</h2>
-                <p class="luta-preco">R$ 55,00</p>
+                <p class="luta-preco">R$ 100,00</p>
                 <a href="#carrinho" class="botao-matricular-se">Matricular-se Agora</a>
             </article>
 
