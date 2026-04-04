@@ -2,79 +2,183 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Pizzaria Fatec - Escolha seu Sabor</title>
+    <title>Team Fatec - Escolha sua arte marcial</title>
+
+    <!-- ÁREA DO CSS -->
+    <style>
+        /* 1. RESET BÁSICO: Tira as margens padrão do navegador e define a fonte */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa; /* Fundo cinza bem claro */
+            color: #333; /* Texto cinza escuro para boa leitura */
+        }
+
+        /* 2. ESTILO DO CABEÇALHO */
+        .cabecalho-principal {
+            background-color: #000000; /* Preto para remeter a luta */
+            color: white;
+            padding: 20px;
+            display: flex; /* Coloca logo e menu na mesma linha */
+            justify-content: space-between; /* Um de cada lado da tela */
+            align-items: center; /* Centraliza verticalmente */
+        }
+
+        /* Estilo dos links do menu */
+        .menu ul {
+            list-style: none; /* Tira as "bolinhas" da lista */
+            display: flex; /* Coloca os links do menu lado a lado */
+            gap: 20px; /* Espaço entre os links */
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none; /* Tira o sublinhado do link */
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #ffffff; /* Fica amarelo ao passar o mouse! (Interatividade) */
+        }
+
+        /* 3. CONTEÚDO PRINCIPAL */
+        .conteudo-principal {
+            padding: 40px 20px;
+            text-align: center; /* Centraliza o título principal */
+        }
+
+        .titulo-pagina {
+            margin-bottom: 30px;
+            color: #ff9800;
+        }
+
+        /* 4. A MÁGICA DO FLEXBOX (Organizando as lutas) */
+        .grade-de-lutas {
+            display: flex; /* Transforma a caixa numa linha flexível */
+            justify-content: center; /* Centraliza os cartões no meio da tela */
+            gap: 30px; /* Espaço entre cada cartão de luta */
+            flex-wrap: wrap; /* Se a tela for pequena, joga o cartão pra baixo */
+        }
+
+        .cartao-luta {
+            background-color: white;
+            padding: 20px; /* Espaço interno */
+            border-radius: 10px; /* Bordas arredondadas */
+            width: 300px; /* Largura fixa do cartão */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para dar efeito 3D */
+            transition: transform 0.3s; /* Prepara uma animação suave */
+        }
+
+        .cartao-luta:hover {
+            transform: translateY(-10px); /* O cartão "pula" ao passar o mouse */
+        }
+
+        .cartao-luta img {
+            width: 100%; /* A imagem ocupa 100% da largura do cartão */
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .luta-nome {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .luta-ingredientes {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            height: 40px; /* Mantém os textos alinhados independente do tamanho */
+        }
+
+        .luta-preco {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2e7d32; /* Verde para remeter a dinheiro/aprovação */
+            margin-bottom: 20px;
+        }
+
+        /* 6. ESTILO DO BOTÃO */
+        .botao-matricular-se {
+            display: inline-block; /* Permite colocar padding num link */
+            background-color: #ff9800; /* Amarelo/Laranja */
+            color: #000;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px; /* Botão bem arredondado */
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .botao-matricular:hover {
+            background-color: #e68a00; /* Escurece ao passar o mouse */
+        }
+
+        /* 7. RODAPÉ */
+        .rodape-principal {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- ========================================== -->
-    <!-- CABEÇALHO DO SITE                          -->
-    <!-- ========================================== -->
+    <!-- CABEÇALHO DO SITE -->
     <header class="cabecalho-principal">
-        <!-- Logo da Pizzaria -->
         <div class="logo">
-            <img src="foto logo pizzaria.png" alt="Logotipo da Pizzaria Fatec">
+            <!-- Trocado o logo por um texto simulando uma marca -->
+            <h2>🥊 Team Fatec</h2>
         </div>
-        
-        <!-- Menu de Navegação -->
         <nav class="menu">
             <ul>
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#acervo">Cardápio</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- ========================================== -->
-    <!-- CONTEÚDO PRINCIPAL (MAIN)                  -->
-    <!-- ========================================== -->
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="conteudo-principal">
-        
-        <!-- Título principal da página -->
-        <h1 class="titulo-pagina">Nosso Cardápio</h1>
+        <h1 class="titulo-pagina">Nossas Artes Marciais</h1>
 
-        <!-- ========================================== -->
-        <!-- CONTAINER DAS PIZZAS                       -->
-        <!-- O <div> é uma caixa genérica que agrupa itens-->
-        <!-- ========================================== -->
-        <div class="grade-de-pizzas">
+        <div class="grade-de-lutas">
 
-            <!-- PIZZA 1 -->
-            <article class="cartao-pizza">
-                <img src="Foto pizza calabresa.png" alt="Foto da Pizza de Calabresa">
-                <h2 class="sabor-nome">Calabresa Clássica</h2>
-                <p class="sabor-ingredientes">Massa fina, molho de tomate, muita calabresa e cebola fatiada.</p>
-                <p class="sabor-preco">R$ 45,00</p>
-                <a href="#carrinho" class="botao-pedir">Pedir Agora</a>
+            <article class="cartao-luta">
+                <img src="" alt="Foto da luta">
+                <h2 class="luta-nome">Boxe</h2>
+                <p class="luta-preco">R$ 45,00</p>
+                <a href="#carrinho" class="botao-matricular-se">Matricular-se Agora</a>
             </article>
 
-            <!-- PIZZA 2 -->
-            <article class="cartao-pizza">
-                <img src="Foto pizza Margherita.png" alt="Foto da Pizza Margherita">
-                <h2 class="sabor-nome">Margherita Especial</h2>
-                <p class="sabor-ingredientes">Mussarela fresca, tomate, manjericão e um fio de azeite.</p>
-                <p class="sabor-preco">R$ 50,00</p>
-                <a href="#carrinho" class="botao-pedir">Pedir Agora</a>
+            <article class="cartao-luta">
+                <img src="https://placehold.co/200x200?text=Pizza+Margherita" alt="Foto da luta">
+                <h2 class="luta-nome">Boxe</h2>
+                <p class="luta-preco">R$ 50,00</p>
+                <a href="#carrinho" class="botao-matricular-se">Matricular-se Agora</a>
             </article>
 
-            <!-- PIZZA 3 -->
-            <article class="cartao-pizza">
-                <img src="Foto pizzza frango.png" alt="Foto da Pizza de Frango com Catupiry">
-                <h2 class="sabor-nome">Frango com Catupiry</h2>
-                <p class="sabor-ingredientes">Frango desfiado temperado coberto com autêntico Catupiry.</p>
-                <p class="sabor-preco">R$ 55,00</p>
-                <a href="#carrinho" class="botao-pedir">Pedir Agora</a>
+            <article class="cartao-luta">
+                <img src="https://placehold.co/200x200?text=Pizza+Frango" alt="Foto da luta">
+                <h2 class="luta-nome">Boxe</h2>
+                <p class="luta-preco">R$ 55,00</p>
+                <a href="#carrinho" class="botao-matricular-se">Matricular-se Agora</a>
             </article>
 
         </div>
-
     </main>
 
-    <!-- ========================================== -->
-    <!-- RODAPÉ DO SITE                             -->
-    <!-- ========================================== -->
+    <!-- RODAPÉ DO SITE -->
     <footer class="rodape-principal">
-        <p>&copy; 2026 Pizzaria Fatec Pompéia. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Team Fatec Pompéia. Todos os direitos reservados.</p>
         <p>Desenvolvido pelos alunos de Sistemas Inteligentes.</p>
     </footer>
 
