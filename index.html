@@ -2,11 +2,11 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Team Fatec - Escolha sua arte marcial</title>
+    <title>Pizzaria Fatec - Escolha seu Sabor</title>
 
     <!-- ÁREA DO CSS -->
     <style>
-       
+        /* 1. RESET BÁSICO */
         * {
             margin: 0;
             padding: 0;
@@ -15,108 +15,164 @@
         }
 
         body {
-            background-color: #f8f9fa; 
+            background-color: #f8f9fa;
             color: #333;
         }
 
         /* 2. ESTILO DO CABEÇALHO */
         .cabecalho-principal {
-            background-color: #000000; 
+            background-color: #d32f2f;
             color: white;
             padding: 20px;
-            display: flex; 
+            display: flex;
             justify-content: space-between;
-            align-items: center; 
+            align-items: center;
         }
 
-        /* Estilo dos links do menu */
         .menu ul {
-            list-style: none; 
-            display: flex; 
+            list-style: none;
+            display: flex;
             gap: 20px;
         }
 
         .menu a {
             color: white;
-            text-decoration: none; 
+            text-decoration: none;
             font-weight: bold;
         }
 
         .menu a:hover {
-            color: #ffffff;
+            color: #ffc107;
         }
 
-     
+        /* 3. CONTEÚDO PRINCIPAL */
         .conteudo-principal {
             padding: 40px 20px;
-            text-align: center; 
+            text-align: center;
         }
 
         .titulo-pagina {
             margin-bottom: 30px;
-            color: #ff9800;
+            color: #d32f2f;
         }
 
-        /* 4. A MÁGICA DO FLEXBOX (Organizando as lutas) */
-        .grade-de-lutas {
-            display: flex; 
-            justify-content: center; 
-            gap: 30px; 
-            flex-wrap: wrap; 
+        /* 4. FLEXBOX DA GRADE DE PIZZAS */
+        .grade-de-pizzas {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
-        .cartao-luta {
+        /* 5. ESTILO DO CARTÃO DE PIZZA */
+        .cartao-pizza {
             background-color: white;
-            padding: 20px; 
-            border-radius: 10px; 
-            width: 300px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-            transition: transform 0.3s; 
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
 
-        .cartao-luta:hover {
-            transform: translateY(-10px); /* O cartão "pula" ao passar o mouse */
+        .cartao-pizza:hover {
+            transform: translateY(-10px);
         }
 
-        .cartao-luta img {
-            width: 100%; /* A imagem ocupa 100% da largura do cartão */
+        .cartao-pizza img {
+            width: 100%;
             border-radius: 5px;
             margin-bottom: 15px;
         }
 
-        .luta-nome {
+        .sabor-nome {
             font-size: 1.2rem;
             margin-bottom: 10px;
         }
 
-        .luta-ingredientes {
+        .sabor-ingredientes {
             font-size: 0.9rem;
             color: #666;
             margin-bottom: 15px;
-            height: 40px; /* Mantém os textos alinhados independente do tamanho */
+            height: 40px;
         }
 
-        .luta-preco {
+        .sabor-preco {
             font-size: 1.4rem;
             font-weight: bold;
-            color: #2e7d32; /* Verde para remeter a dinheiro/aprovação */
+            color: #2e7d32;
             margin-bottom: 20px;
         }
 
-        /* 6. ESTILO DO BOTÃO */
-        .botao-matricular-se {
-            display: inline-block; /* Permite colocar padding num link */
-            background-color: #ff9800; /* Amarelo/Laranja */
+        /* 6. ESTILO DO BOTÃO DE COMPRA */
+        .botao-pedir {
+            display: inline-block;
+            background-color: #ff9800;
             color: #000;
             text-decoration: none;
             padding: 10px 20px;
-            border-radius: 25px; /* Botão bem arredondado */
+            border-radius: 25px;
             font-weight: bold;
             transition: background-color 0.3s;
         }
 
-        .botao-matricular:hover {
-            background-color: #e68a00; /* Escurece ao passar o mouse */
+        .botao-pedir:hover {
+            background-color: #e68a00;
+        }
+
+        /* ================================================================
+           ESTILOS ADICIONADOS: Container do Carrinho e Visual do Botão Remover
+        ================================================================ */
+        .secao-carrinho {
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .secao-carrinho h2 {
+            color: #d32f2f;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f8f9fa;
+            padding-bottom: 10px;
+        }
+
+        #lista-carrinho {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .item-carrinho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .btn-remover {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-remover:hover {
+            background-color: #b71c1c;
+        }
+
+        #total {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2e7d32;
+            text-align: right;
         }
 
         /* 7. RODAPÉ */
@@ -134,13 +190,12 @@
     <!-- CABEÇALHO DO SITE -->
     <header class="cabecalho-principal">
         <div class="logo">
-            <!-- Trocado o logo por um texto simulando uma marca -->
-            <h2>🥊 Team Fatec</h2>
+            <h2>🍕 Fatec Pizza</h2>
         </div>
         <nav class="menu">
             <ul>
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#acervo">Acervo</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -148,39 +203,55 @@
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="conteudo-principal">
-        <h1 class="titulo-pagina">Nossas Artes Marciais</h1>
+        <h1 class="titulo-pagina">Nosso Cardápio</h1>
 
-        <div class="grade-de-lutas">
+        <!-- CONTAINER DAS PIZZAS -->
+        <div class="grade-de-pizzas">
 
-            <article class="cartao-luta">
-                <img src="Foto boxe.png" alt="Foto boxe">
-                <h2 class="luta-nome">Boxe</h2>
-                <p class="luta-preco">R$ 100,00</p>
-                <a href="#carrinho" class="botao-matricular-se">Matricular-se Agora</a>
+            <article class="cartao-pizza">
+                <img src="Foto pizza calabresa.png" alt="Foto da Pizza de Calabresa">
+                <h2 class="sabor-nome">Calabresa Clássica</h2>
+                <p class="sabor-ingredientes">Massa fina, molho de tomate, muita calabresa e cebola fatiada.</p>
+                <p class="sabor-preco">R$ 45,00</p>
+                <!-- Vinculado os datasets de sabor e preço -->
+                <a href="#carrinho" class="botao-pedir" data-sabor="Calabresa Clássica" data-preco="45.00">Pedir Agora</a>
             </article>
 
-            <article class="cartao-luta">
-                <img src="jiujitsu.png" alt="Foto jiujitsu">
-                <h2 class="luta-nome">Boxe</h2>
-                <p class="luta-preco">R$ 100,00</p>
-                <a href="#carrinho" class="botao-matricular-se">Matricular-se Agora</a>
+            <article class="cartao-pizza">
+                <img src="Foto pizza Margherita.png" alt="Foto da Pizza Margherita">
+                <h2 class="sabor-nome">Margherita Especial</h2>
+                <p class="sabor-ingredientes">Mussarela fresca, tomate, manjericão e um fio de azeite.</p>
+                <p class="sabor-preco">R$ 50,00</p>
+                <a href="#carrinho" class="botao-pedir" data-sabor="Margherita Especial" data-preco="50.00">Pedir Agora</a>
             </article>
 
-            <article class="cartao-luta">
-                <img src="muay thay.png" alt="Foto muaythay">
-                <h2 class="luta-nome">Boxe</h2>
-                <p class="luta-preco">R$ 100,00</p>
-                <a href="#carrinho" class="botao-matricular-se">Matricular-se Agora</a>
+            <article class="cartao-pizza">
+                <img src="Foto pizzza frango.png" alt="Foto da Pizza de Frango">
+                <h2 class="sabor-nome">Frango com Catupiry</h2>
+                <p class="sabor-ingredientes">Frango desfiado temperado coberto com autêntico Catupiry.</p>
+                <p class="sabor-preco">R$ 55,00</p>
+                <a href="#carrinho" class="botao-pedir" data-sabor="Frango com Catupiry" data-preco="55.00">Pedir Agora</a>
             </article>
 
         </div>
+
+        <!-- Mapeamento da Seção do Carrinho exigida pelos seletores do script -->
+        <section id="carrinho" class="secao-carrinho">
+            <h2>🛒 Seu Carrinho</h2>
+            <ul id="lista-carrinho">
+                <!-- Injetado dinamicamente via JS -->
+            </ul>
+            <div id="total">Total: R$ 0.00</div>
+        </section>
+
     </main>
 
-    <!-- RODAPÉ DO SITE -->
     <footer class="rodape-principal">
-        <p>&copy; 2026 Team Fatec Pompéia. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Pizzaria Fatec Pompéia. Todos os direitos reservados.</p>
         <p>Desenvolvido pelos alunos de Sistemas Inteligentes.</p>
     </footer>
 
+    <!-- Carregamento do script no final do body para garantir o mapeamento do DOM -->
+    <script src="app.js"></script>
 </body>
 </html>
